@@ -218,13 +218,15 @@ const Home=(props)=>{
     <div className="heading">
             --------------- YOUR TODO LIST IS HERE ---------------
     </div>
-    <div className="w-100 text-center mt-2">
+    <hr style={{backgroundColor:"white",height:"2px"}}></hr>
+    <div className="w-100 text-center mt-2" >
         <Button variant="link" onClick={handleLogout}>
           Log Out
         </Button>
+        <div className="heading2">{currentUser.email}</div>
     </div>
-    <div className="heading">{currentUser.email}</div>
-    <hr></hr>
+    {/* <div className="heading2">{currentUser.email}</div> */}
+    <hr style={{backgroundColor:"white",height:"2px"}}></hr>
     <div >PENDING TASKS [{tasksRemaining}]</div>
     <hr></hr>
     

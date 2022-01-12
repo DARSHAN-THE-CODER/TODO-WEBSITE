@@ -3,7 +3,7 @@
     background-color: black;
     font-weight: bold;
     color: white;
-    font-size: 1.3vw;
+    /* font-size: 1.3vw; */
 }
 
 
@@ -29,6 +29,14 @@ table.tl{
 
 .heading {
     font-size: 4vw;
+    /* text-shadow: 3px 0px 0px white; */
+    mix-blend-mode:screen;
+    position: relative;
+    animation: fadeIn 2.5s linear forwards;
+}
+
+.heading2{
+    font-size: 2vw;
     /* text-shadow: 3px 0px 0px white; */
     mix-blend-mode:screen;
     position: relative;

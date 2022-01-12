@@ -3,6 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthFunctions";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import Mailto from 'reactv16-mailto';
 // import {updateProfile} from "firebase"
 import axios from "axios";
 
@@ -58,7 +59,15 @@ export default function Signup() {
 
   return (
     <div style={{width:"100%",height:"100vh"}}>
-      Say goodbye to all those post-it notes and hello to your new to-do list
+      Say goodbye to all those post-it notes and hello to your new to-do list by : 
+      <Mailto email="reachdarshanv@gmail.com" obfuscate={true}>
+                         @DARSHAN V
+                     </Mailto>
+                     <br></br>
+                     <br></br>
+      <Link to="/" style={{marginRight:"10px",color:"powderblue",fontSize:"4vh"}}> HOME</Link>
+            {/* <h2 className="text-right" style={{marginRight:"10px",color:"powderblue",textDecoration:"none"}}>HOME</h2> */}
+
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
