@@ -16,8 +16,10 @@ const Front = () => {
             </nav>
             </div>
             <hr style={{backgroundColor:"white",height:"4px"}}></hr>
-            <div style={{font:"message box",textAlign:"center",fontFamily:"Brush Script MT",fontSize:"8vh"}}>
+            <div >
+                <h2 style={{font:"message box",textAlign:"center",fontFamily:"Brush Script MT",fontSize:"8vh"}}>
                 MY TODO APP
+                </h2>
             </div>
             <hr style={{backgroundColor:"white",height:"2px"}}></hr>
             <div style={{display:"flex"}}>
