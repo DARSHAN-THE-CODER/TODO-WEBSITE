@@ -74,11 +74,9 @@ const Home=(props)=>{
             }
         )
         .then((res)=>{
-            console.log(res.data);
             setTask(res.data);
             })
         .catch((e)=>{
-            console.log(e);
             setMes("CANT FETCH YOUR TODO LIST !! PLEASE REFRESH THE PAGE TO TRY AGAIN ")
             // setTimeout(()=>{
             //     setMes("");
@@ -98,7 +96,6 @@ const Home=(props)=>{
             }
         )
         .then((res)=>{
-            console.log(res.data.message)
             setTask(newTasks);
             window.scrollTo("",window.screen.height);
             setMes("NEW TASK ADDED SUCCESSFULLY TO YOUR LIST !")
@@ -107,7 +104,6 @@ const Home=(props)=>{
             },3000);
         })
         .catch((e)=>{
-            console.log(e);
             window.scrollTo("",window.screen.height);
             setMes("KINDLY REFRESH THE PAGE AND TRY AGAIN !")
             setTimeout(()=>{
@@ -115,11 +111,7 @@ const Home=(props)=>{
             },3000);
             history.push("/todo")
         })
-        // setTask(newTasks);
-        // setMes("NEW TASK ADDED SUCCESSFULLY TO YOUR LIST !")
-        // setTimeout(()=>{
-        //     setMes("");
-        // },3000);
+        
     };
 
 // ----------------------TO COMPLETE TASK --------------------------------
@@ -135,7 +127,6 @@ const Home=(props)=>{
             }
         )
         .then((res)=>{
-            console.log(res.data.message)
             setTask(newTasks);
             window.scrollTo("",window.screen.height);
             setMes("GREAT !! YOU HAVE SUCCESSFULLY COMPLETED THE TASK ")
@@ -144,7 +135,6 @@ const Home=(props)=>{
             },3000);
         })
         .catch((e)=>{
-            console.log(e);
             window.scrollTo("",window.screen.height);
             setMes("KINDLY REFRESH THE PAGE AND TRY AGAIN !! ")
             setTimeout(()=>{
@@ -152,11 +142,6 @@ const Home=(props)=>{
             },3000);
         })
 
-        // setTask(newTasks);
-        // setMes("GREAT !! YOU HAVE SUCCESSFULLY COMPLETED THE TASK ")
-        // setTimeout(()=>{
-        //     setMes("");
-        // },3000);
     };
 // -----------------------TO REMOVE TASK ---------------------------------
     const removeTask = index => {
@@ -171,7 +156,6 @@ const Home=(props)=>{
             }
         )
         .then((res)=>{
-            console.log(res.data.message);
             setTask(newTasks);
             window.scrollTo("",window.screen.height);
             setMes("TASK REMOVED  FROM THE LIST !!")
@@ -180,18 +164,13 @@ const Home=(props)=>{
             },3000);
         })
         .catch((e)=>{
-            console.log(e);
             window.scrollTo("",window.screen.height);
             setMes("KINDLY REFRESH THE PAGE AND TRY AGAIN !! ")
             setTimeout(()=>{
                 setMes("");
             },3000);
         })
-        // setTask(newTasks);
-        // setMes("TASK REMOVED  FROM THE LIST !!")
-        // setTimeout(()=>{
-        //     setMes("");
-        // },3000);
+     
     };
 
     // console.log(task.length);

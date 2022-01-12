@@ -2,7 +2,6 @@ import firebase from "firebase/app"
 import "firebase/auth"
 import env from "react-dotenv";
 
-console.log(process.env.REACT_APP_FIREBASE_API_KEY);
 const app = firebase.initializeApp({
   apiKey: "AIzaSyAptnZfms5-I_9_NnytIEGqVoXWdtL46RM",
   authDomain: "todo-app-7dfe8.firebaseapp.com",

@@ -27,7 +27,6 @@ export default function Login() {
       history.push("/todo")
     }
     catch(e) {
-      console.log(e)
       if(e.message==="There is no user record corresponding to this identifier. The user may have been deleted.")
       {
         setError("Failed to log in: User not exist !! ")

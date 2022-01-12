@@ -25,7 +25,6 @@ export default function Signup() {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    console.log(auth.currentUser);
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
@@ -35,11 +34,8 @@ export default function Signup() {
       setError("")
       setLoading(true)
       const z=await signup(emailRef.current.value, passwordRef.current.value)
-      console.log(z);
-      console.log(nameRef.current.value);
       const x= Object({uid:z.user.uid,email:z.user.email,name:nameRef.current.value});
       // await updateProfile(nameRef.current.value);
-      console.log(x);
       axios(
         {
           method:'post',
@@ -48,19 +44,11 @@ export default function Signup() {
         }
       )
       .then(function(res){
-        console.log(res.data.message);
-        console.log("added")
+        console.log("  .")
       })
-      // .catch((err)=>{
-      //   console.log(err);
-      // })     
-      console.log(z.user);
-      console.log(z.user.email);
-      console.log(z.user.uid);
-      console.log(auth.currentUser);
+
       history.replace("/login");
     } catch (e){
-      console.log(e);
         setError("Failed to create an account:"+e.message)
       // setError("Failed to create an account ")
     }
