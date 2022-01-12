@@ -1,0 +1,86 @@
+*{
+    /* background-color: coral; */
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 1.3vw;
+}
+
+
+
+.home1{
+    color: white;
+    font-size: larger;
+}
+
+table:hover{
+    /* border-color: rgb(27, 214, 183); */
+    /* background-color: gray; */
+    border-color: #0af0c9 ;
+    font-weight:bolder ;
+}
+
+table.tl{
+    border:"3";
+    word-wrap : "break-word";
+    table-layout : "fixed";
+    overflow : "hidden";
+}
+
+.heading {
+    font-size: 4vw;
+    /* text-shadow: 3px 0px 0px white; */
+    mix-blend-mode:screen;
+    position: relative;
+    animation: fadeIn 2.5s linear forwards;
+}
+
+.heading:hover{
+   /* border-color: coral; */
+}
+
+.crt{
+    padding: 10px;
+}
+
+.input{
+    padding: 5px;
+    background-color: rgb(255, 253, 253);
+    /* color: white; */
+    font-size: larger;
+    box-shadow: white;
+    align-content: center;
+    margin-left: 40%;
+}
+
+/* .crt:focus{
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.1) inset, 0 0 100px rgba(255, 255, 255, 0.9);
+    background-color: white;
+
+} */
+
+.btn {
+    /* color: white; */
+    /* background-color: black; */
+    /* border-radius: 5px white; */
+    border-color: 2px solid white;
+    font-size: larger;
+}
+
+.btn:hover{
+    border-color: 2px solid white;
+}
+
+.op{
+    overflow-x: auto;
+}
+
+.oi{
+    min-width: 100vw;
+}
+
+.fro{
+    font-size: 2vw;
+    /* padding-left: 20vw; */
+    margin-left: 20vw;
+}
