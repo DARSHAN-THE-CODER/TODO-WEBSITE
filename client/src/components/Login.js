@@ -44,6 +44,7 @@ export default function Login() {
 
   return (
     <div >
+            <Link to="/" style={{marginRight:"10px",color:"powderblue",fontSize:"6vh"}}> HOME</Link>
       {/* style={{width:"80vw",paddingLeft:"28vw",paddingRight:"10vw",paddingTop:"10vw",paddingBottom:"4vw",mixBlendMode:"screen"}} */}
       <Card>
         <Card.Body>
