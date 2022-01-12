@@ -4,6 +4,7 @@ import  mongoose  from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
+import path from "path";
 // var express = require(express);
 
 var app=express();
@@ -90,7 +91,7 @@ app.post("/api/addtask",(req,res)=>{
 if(process.env.NODE_ENV=="production"){
     app.use(express.static("client/build"));
     app.get('*',(req,res)=>{
-        res.sendFile(path.join(__dirname,'client','build','index.html'))
+        res.sendFile(path.join(__dirname,"./client/build", "index.html"))
     })
 }
 
