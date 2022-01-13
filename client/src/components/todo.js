@@ -62,12 +62,12 @@ function CreateTask({ addTask }) {
 
 const Home=(props)=>{
     const [tasksRemaining, setTasksRemaining] = useState(0);
-    const [mes,setMes] = useState(" ")
+    const [mes,setMes] = useState("")
     const {currentUser} = useAuth();
     const [task,setTask]=useState([
 
     ]);
-    const [done,setDone]=useState(" ");
+    const [done,setDone]=useState("");
     const uid=currentUser.uid;
     useEffect(()=>{
         window.scrollTo("",window.screen.height);
