@@ -92,3 +92,23 @@ table.tl{
     /* padding-left: 20vw; */
     margin-left: 20vw;
 }
+
+/* .ti{
+    display:"flex";
+} */
+@media (max-width: 480px) {
+     h2{
+        color: royalblue;
+    }
+   /* link.fro{
+        font-size: 100vw;
+    } */
+    .lp{
+        height: 100%;
+        width: 250px;
+    }
+    div.ll{
+        height: 5vw;
+    }
+    
+}
