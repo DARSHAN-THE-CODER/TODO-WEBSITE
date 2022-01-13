@@ -195,6 +195,9 @@ const Home=(props)=>{
             window.scrollTo("",window.screen.height);
             setDone("YOU COMPLETED ALL THE TASKS !!")
         }
+        else{
+            setDone("")
+        }
     },[tasksRemaining])
 
     const [per,setPer]=useState(0);
