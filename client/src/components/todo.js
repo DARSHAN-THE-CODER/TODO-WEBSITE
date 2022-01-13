@@ -104,7 +104,7 @@ const Home=(props)=>{
             window.scrollTo("",window.screen.height);
             setDone("NEW TASK ADDED SUCCESSFULLY TO YOUR LIST !")
             setTimeout(()=>{
-                setMes("");
+                setDone("");
             },3000);
         })
         .catch((e)=>{
@@ -135,7 +135,7 @@ const Home=(props)=>{
             window.scrollTo("",window.screen.height);
             setDone("GREAT !! YOU HAVE SUCCESSFULLY COMPLETED THE TASK ")
             setTimeout(()=>{
-                setMes("");
+                setDone("");
             },3000);
         })
         .catch((e)=>{
@@ -164,7 +164,7 @@ const Home=(props)=>{
             window.scrollTo("",window.screen.height);
             setDone("TASK REMOVED  FROM THE LIST !!")
             setTimeout(()=>{
-                setMes("");
+                setDone("");
             },3000);
         })
         .catch((e)=>{
@@ -210,12 +210,8 @@ const Home=(props)=>{
             history.push("/login")
           } catch(e) {
           setMes("Failed to log out")
-        console.log("Failed to log out");
         }
       }
-    // const {isve}= useAuth();
-    // const x=isve();
-    // console.log(x);
     // const [noo,setNoo]=useState(" ");
 
     // if(!navigator.onLine){
