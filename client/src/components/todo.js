@@ -13,13 +13,13 @@ function Task({ task , index, completeTask , removeTask}) {
     return (
         <div
             className="task"
-            style={{ textDecoration: task.completed ? "line-through red" : "" ,textDecorationStyle:task.completed?"double":""}}>
+            style={{ textDecoration: task.completed ? "line-through" : "" ,textDecorationStyle:task.completed?"single":""}}>
 {/* ,textDecorationColor:task.completed?"white":"" */}
             <table border="3" table-layout ="fixed">
                 <tbody>
                 <tr>
-                    <td width="100%" style={{textDecorationColor:task.completed?"red":"red"}}>{task.title}</td>
-                    <td width="auto"><button style={{ background: "black" , bordercolor:"white" , color:task.title==="a"?"white":"white" }} onClick={() => removeTask(index)}>-</button></td>
+                    <td width="100%" style={{textDecorationColor:task.completed?" ":" ",color:task.completed?"green":" "}}>{task.title}</td>
+                    <td width="auto"><button style={{ background: "black" , bordercolor:"white" , color:task.title==="l"?"white":"white" }} onClick={() => removeTask(index)}>-</button></td>
                     <td width="auto" bordercolor="white"><button onClick={() => completeTask(index)} >COMPLETE</button></td>
                 </tr>
                 </tbody>
@@ -65,7 +65,10 @@ const Home=(props)=>{
     const [mes,setMes] = useState("")
     const {currentUser} = useAuth();
     const [task,setTask]=useState([
-
+        {
+            title:"abcd",
+            completed:false
+        }
     ]);
     const [done,setDone]=useState("");
     const uid=currentUser.uid;
