@@ -65,10 +65,7 @@ const Home=(props)=>{
     const [mes,setMes] = useState("")
     const {currentUser} = useAuth();
     const [task,setTask]=useState([
-        {
-            title:"abcd",
-            completed:false
-        }
+
     ]);
     const [done,setDone]=useState("");
     const uid=currentUser.uid;
