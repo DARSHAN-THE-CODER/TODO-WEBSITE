@@ -1,7 +1,7 @@
 import React from "react";
 import  { useState } from "react";
 import { useEffect } from "react";
-import { Button} from "react-bootstrap";
+import { Button , Alert} from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthFunctions.js";
 import axios from "axios";
@@ -42,18 +42,21 @@ function CreateTask({ addTask }) {
     }
     
     return (
-        <form onSubmit={handleSubmit}  className="crt">
+        <div style={{width:"100vw"}}>
+        <form onSubmit={handleSubmit}  >
             <input
                 type="text"
-                className="input"
+                className="inputk"
                 value={value}
                 style={{color:"black"},{backgroundColor:"black"}}
                 placeholder="Add a new task"
                 onChange={e => setValue(e.target.value)}
                 required
             />
-            <button className="btn1" type="submit" style={{fontSize:"20px"}} value="+" onSubmit={handleSubmit}>+</button>
+            <input className="btinp" type="submit" />
+            {/* <button className="btn1" type="submit" style={{fontSize:"20px"}} value="+" onSubmit={handleSubmit}>+</button> */}
         </form>
+        </div>
     );
 }
 
@@ -62,8 +65,9 @@ const Home=(props)=>{
     const [mes,setMes] = useState(" ")
     const {currentUser} = useAuth();
     const [task,setTask]=useState([
-      
+
     ]);
+    const [done,setDone]=useState(" ");
     const uid=currentUser.uid;
     useEffect(()=>{
         window.scrollTo("",window.screen.height);
@@ -98,7 +102,7 @@ const Home=(props)=>{
         .then((res)=>{
             setTask(newTasks);
             window.scrollTo("",window.screen.height);
-            setMes("NEW TASK ADDED SUCCESSFULLY TO YOUR LIST !")
+            setDone("NEW TASK ADDED SUCCESSFULLY TO YOUR LIST !")
             setTimeout(()=>{
                 setMes("");
             },3000);
@@ -129,7 +133,7 @@ const Home=(props)=>{
         .then((res)=>{
             setTask(newTasks);
             window.scrollTo("",window.screen.height);
-            setMes("GREAT !! YOU HAVE SUCCESSFULLY COMPLETED THE TASK ")
+            setDone("GREAT !! YOU HAVE SUCCESSFULLY COMPLETED THE TASK ")
             setTimeout(()=>{
                 setMes("");
             },3000);
@@ -158,7 +162,7 @@ const Home=(props)=>{
         .then((res)=>{
             setTask(newTasks);
             window.scrollTo("",window.screen.height);
-            setMes("TASK REMOVED  FROM THE LIST !!")
+            setDone("TASK REMOVED  FROM THE LIST !!")
             setTimeout(()=>{
                 setMes("");
             },3000);
@@ -189,7 +193,7 @@ const Home=(props)=>{
         window.scrollTo("",window.screen.height);
         if(tasksRemaining===0){
             window.scrollTo("",window.screen.height);
-            setMes("YOU COMPLETED ALL THE TASKS !!")
+            setDone("YOU COMPLETED ALL THE TASKS !!")
         }
     },[tasksRemaining])
 
@@ -209,14 +213,22 @@ const Home=(props)=>{
         console.log("Failed to log out");
         }
       }
-    
-    // console.log(currentUser);
+    // const {isve}= useAuth();
+    // const x=isve();
+    // console.log(x);
+    // const [noo,setNoo]=useState(" ");
+
+    // if(!navigator.onLine){
+    //         setNoo("OOPS !! YOU ARE OFFLINE")
+    // }
+    // else{
+    //         setNoo()
+    // }
     
     return(
-        
     <div>
     <div className="heading">
-            --------------- YOUR TODO LIST IS HERE ---------------
+             -------------- YOUR TODO LIST IS HERE --------------
     </div>
     <hr style={{backgroundColor:"white",height:"2px"}}></hr>
     <div className="w-100 text-center mt-2" >
@@ -228,9 +240,8 @@ const Home=(props)=>{
     {/* <div className="heading2">{currentUser.email}</div> */}
     <hr style={{backgroundColor:"white",height:"2px"}}></hr>
     <div >PENDING TASKS [{tasksRemaining}]</div>
-    <hr></hr>
-    
-    
+    <hr style={{backgroundColor:"white",height:"2px"}}></hr>    
+
     <div className="home1">
 
         {task.map((task, index) => (
@@ -256,7 +267,10 @@ const Home=(props)=>{
         />
     </div>
     <div>
-        <h1 id="err">{mes}</h1>
+        {/* <h1 id="err">{mes}</h1> */}
+        {done && <Alert variant="success">{done}</Alert>}
+        {mes && <Alert variant="danger">{mes}</Alert>}
+        {/* {noo && <Alert variant="danger">{noo}</Alert>} */}
     </div>
     <hr></hr>
     </div>

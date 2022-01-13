@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthFunctions.js"
 import { Link, useHistory } from "react-router-dom"
+import { useAuth } from "../contexts/AuthFunctions"
 
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login } = useAuth()
+  const { login ,emailVeri} = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
@@ -17,14 +17,22 @@ export default function Login() {
     e.preventDefault();
     handleSubmit();
   }};
-
+  const { currentUser } = useAuth();
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/todo")
+      // history.push("/todo")
+      if(currentUser.emailVerified){
+        history.push("/todo")
+      }
+      else{
+        setLoading(true)
+        emailVeri();
+        setError("YOUR EMAIL IS NOT VERIFIED , PLEASE CHECK YOUR INBOX TO VERIFY YOUR EMAIL :)")
+      }
     }
     catch(e) {
       if(e.message==="There is no user record corresponding to this identifier. The user may have been deleted.")
@@ -35,7 +43,7 @@ export default function Login() {
         setError("Failed to log in: The password is invalid");
       }
       else{
-           setError("Failed to log in")   
+           setError("Failed to log in") 
       }
       // setError("Failed to log in")
     }

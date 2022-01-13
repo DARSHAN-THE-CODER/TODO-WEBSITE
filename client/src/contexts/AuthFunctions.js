@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   function signup(email, password) {
+  
     return auth.createUserWithEmailAndPassword(email, password)
   }
 
@@ -40,6 +41,14 @@ export function AuthProvider({ children }) {
     return currentUser.updateProfile({displayName:name});
   }
 
+  function emailVeri(){
+    return currentUser.sendEmailVerification();
+  }
+
+  function isve(){
+    return currentUser.isEmailVerified;
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
@@ -57,7 +66,9 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
-    updateProfile
+    updateProfile,
+    emailVeri,
+    isve
   }
 
   return (

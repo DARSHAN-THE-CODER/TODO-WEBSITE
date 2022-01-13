@@ -10,6 +10,7 @@ import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import Home from "./todo"
 import Front from "./Home.js"
+import Verify from "./email"
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route  path="/forgot-password" component={ForgotPassword} />
               <PrivateRoute exact path="/todo" component={Home} />
-              {/* <Route exact path="/front" component={Front}/> */}
+              <Route exact path="/verify" component={Verify}/>
             </Switch>
           </AuthProvider>
         </Router>

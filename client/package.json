@@ -19,6 +19,7 @@
     "react-mailto": "^0.4.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-tsparticles": "^1.39.0",
     "reactv16-mailto": "^0.4.4",
     "styled-components": "^5.3.3"
   },

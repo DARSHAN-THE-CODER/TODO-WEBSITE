@@ -1,6 +1,6 @@
 *{
     /* background-color: coral; */
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     font-weight: bold;
     color: white;
     /* font-size: 1.3vw; */
@@ -67,6 +67,16 @@ table.tl{
 
 } */
 
+.inputk{
+    padding: 5px;
+    background-color: rgb(255, 253, 253);
+    /* width:200px;         */
+    font-size: larger;
+    box-shadow: white;
+    align-content: center;
+    margin-left: 40%;
+}
+
 .btn {
     /* color: white; */
     /* background-color: black; */
@@ -96,13 +106,15 @@ table.tl{
 /* .ti{
     display:"flex";
 } */
+.btinp{
+    font-size:"20px";
+}
+
+
 @media (max-width: 480px) {
      h2{
         color: royalblue;
     }
-   /* link.fro{
-        font-size: 100vw;
-    } */
     .lp{
         height: 100%;
         width: 250px;
@@ -110,5 +122,29 @@ table.tl{
     div.ll{
         height: 5vw;
     }
-    
+    .inputk{
+        padding: none; 
+        margin-left: 10px;
+        width:90vw; 
+        text-align: center;
+        font-size: 2px;       
+        background-color: rgb(255, 253, 253);
+        color: white;
+        font-size: larger;
+        box-shadow: white;
+        align-content: center;
+    }
+    h1#err{
+        font-size: 20px;
+    }
+    .btinp{
+        font-size: 7vw ;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+        align-items:center;
+        margin: auto;
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+    }
 }

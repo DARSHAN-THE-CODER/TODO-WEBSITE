@@ -12,8 +12,9 @@ export default function Signup() {
   const passwordRef = useRef()
   const nameRef = useRef()
   const passwordConfirmRef = useRef()
-  const {  signup ,updateProfile} = useAuth()
+  const {  signup ,updateProfile,emailVeri} = useAuth()
   const [error, setError] = useState("")
+  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
 
@@ -34,7 +35,7 @@ export default function Signup() {
     try {
       setError("")
       setLoading(true)
-      const z=await signup(emailRef.current.value, passwordRef.current.value)
+      const z=await signup(emailRef.current.value, passwordRef.current.value);
       const x= Object({uid:z.user.uid,email:z.user.email,name:nameRef.current.value});
       // await updateProfile(nameRef.current.value);
       axios(
@@ -47,9 +48,13 @@ export default function Signup() {
       .then(function(res){
         console.log("  .")
       })
-
-      history.replace("/login");
-    } catch (e){
+      // const y=await emailVeri();
+      setMessage("ACCOUNT CREATED SUCCESSFULLY")
+      setTimeout(()=>{
+        history.replace("/login");
+      },3000)
+      // history.replace("/login");
+      } catch (e){
         setError("Failed to create an account:"+e.message)
       // setError("Failed to create an account ")
     }
@@ -71,8 +76,9 @@ export default function Signup() {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
-          <hr style={{backgroundColor:"white"}}></hr>
+          <hr style={{backgroundColor:"white",height:"2px"}}></hr>
           {error && <Alert variant="danger">{error}</Alert>}
+          {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit} onKeyPress={handleKeypress}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
